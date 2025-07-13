@@ -1,0 +1,17 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.neon-text {
+  text-shadow: 0 0 5px #ff4ecd, 0 0 10px #ff4ecd, 0 0 20px #ff4ecd, 0 0 40px #ff4ecd;
+}
+
+.glow {
+  box-shadow: 0 0 10px #ff4ecd, 0 0 20px #ff4ecd;
+}
+
+body {
+  background-color: black;
+  font-family: 'Press Start 2P', cursive;
+}
