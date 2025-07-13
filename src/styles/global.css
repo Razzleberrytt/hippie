@@ -2,50 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === Custom Fonts === */
-@font-face {
-  font-family: 'PressStart2P';
-  src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
-}
+/* Import vaporwave fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
 
+/* === Global Body === */
 body {
-  @apply bg-gradient-to-br from-[#1a0022] via-[#220044] to-[#0f001a] text-white font-sans antialiased overflow-x-hidden;
-  font-family: 'PressStart2P', monospace;
+  @apply bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white font-vapor antialiased;
+  background-size: 400% 400%;
+  animation: backgroundPulse 30s ease infinite;
 }
 
-/* === Neon Glow Colors === */
+@keyframes backgroundPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Glassmorphism Cards === */
+.card-glass {
+  @apply bg-white/5 backdrop-blur-md rounded-xl border border-white/10 shadow-lg transition-transform;
+}
+
+/* === Neon Text Glow Utilities === */
 .text-neon-pink {
   @apply text-pink-500;
-  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  text-shadow: 0 0 5px #FF6EC7, 0 0 10px #FF6EC7, 0 0 20px #FF6EC7;
 }
 
 .text-neon-cyan {
   @apply text-cyan-400;
-  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+  text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 20px #00FFFF;
 }
 
 .text-neon-purple {
   @apply text-purple-400;
-  text-shadow: 0 0 5px #b44cff, 0 0 10px #b44cff, 0 0 20px #b44cff;
+  text-shadow: 0 0 5px #8A2BE2, 0 0 10px #8A2BE2, 0 0 20px #8A2BE2;
 }
 
-/* === Drop Shadow Glow === */
+/* === Glitch Effect on Heading === */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+.glitch::before {
+  animation: glitchTop 2s infinite linear alternate-reverse;
+  color: #f0f;
+  z-index: -1;
+}
+.glitch::after {
+  animation: glitchBottom 3s infinite linear alternate-reverse;
+  color: #0ff;
+  z-index: -2;
+}
+
+@keyframes glitchTop {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  5% { clip: rect(0, 9999px, 5px, 0); transform: translate(-2px, -2px); }
+  10% { clip: rect(0, 9999px, 0, 0); transform: none; }
+}
+
+@keyframes glitchBottom {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  5% { clip: rect(10px, 9999px, 20px, 0); transform: translate(2px, 2px); }
+  10% { clip: rect(0, 9999px, 0, 0); transform: none; }
+}
+
+/* === Floating Animations === */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* === Utility Shadows === */
 .drop-shadow-glow {
   filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
-}
-
-/* === Glassmorphism Card === */
-.card-glass {
-  @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-xl;
-}
-
-/* === Animation Keyframes === */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
 }
