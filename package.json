@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^4.0.0",
-    "@astrojs/image": "^1.1.6",
+    "@astrojs/image": "^1.0.5",
     "astro": "^4.6.18",
     "framer-motion": "^10.16.3"
   },
