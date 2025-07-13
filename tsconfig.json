@@ -1,13 +1,10 @@
-
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "jsx": "preserve",
-    "esModuleInterop": true,
     "strict": true,
-    "types": ["astro/client"]
-  },
-  "include": ["src"]
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"]
+    }
+  }
 }
