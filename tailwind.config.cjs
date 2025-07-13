@@ -1,20 +1,23 @@
-/** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,ts,tsx}"],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,ts,tsx}"
+  ],
   theme: {
     extend: {
+      fontFamily: {
+        vapor: ['"PressStart2P"', ...defaultTheme.fontFamily.sans]
+      },
       colors: {
         neon: {
           pink: "#FF4CE1",
           cyan: "#0FF0FC",
-          purple: "#9F0FFF"
+          purple: "#B44CFF"
         }
       },
-      fontFamily: {
-        vapor: ["'Press Start 2P'", "cursive"]
-      },
       animation: {
-        float: "float 6s ease-in-out infinite"
+        float: "float 4s ease-in-out infinite"
       },
       keyframes: {
         float: {
