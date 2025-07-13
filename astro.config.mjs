@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import github from '@astrojs/github';
+import github from '@astrojs/github-pages';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
