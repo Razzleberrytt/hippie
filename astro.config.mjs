@@ -1,9 +1,13 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import image from '@astrojs/image';
+
+// Update this to your actual GitHub username
+const username = 'razzleberrytt';
 
 export default defineConfig({
-  output: "static",
-  integrations: [tailwind()],
-  site: "https://razzleberrytt.github.io/hippie/",
-  base: "/hippie/",
+  site: `https://${username}.github.io`,
+  base: '/hippie/',
+  output: 'static',
+  integrations: [tailwind(), image()],
 });
