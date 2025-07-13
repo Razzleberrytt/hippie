@@ -1,17 +1,17 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.neon-text {
-  text-shadow: 0 0 5px #ff4ecd, 0 0 10px #ff4ecd, 0 0 20px #ff4ecd, 0 0 40px #ff4ecd;
-}
-
-.glow {
-  box-shadow: 0 0 10px #ff4ecd, 0 0 20px #ff4ecd;
-}
-
 body {
-  background-color: black;
   font-family: 'Press Start 2P', cursive;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #fff;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
