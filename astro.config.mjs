@@ -1,11 +1,22 @@
 import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
+import githubPages from 'astro-github-pages';
 
-// Update this to your actual GitHub username
-const username = 'razzleberrytt';
-
+// https://astro.build/config
 export default defineConfig({
-  site: `https://${username}.github.io`,
-  base: '/hippie/',
   output: 'static',
+  site: 'https://razzleberrytt.github.io',
+  integrations: [
+    react(),
+    tailwind(),
+    sitemap(),
+    githubPages()
+  ],
+  vite: {
+    ssr: {
+      noExternal: ['framer-motion']
+    }
+  }
 });
