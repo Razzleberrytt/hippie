@@ -10,7 +10,7 @@
   "dependencies": {
     "astro": "^4.6.18",
     "@astrojs/github-pages": "latest",
-    "@astrojs/tailwind": "^3.1.3"
+    "@astrojs/tailwind": "5.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
