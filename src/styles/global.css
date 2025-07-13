@@ -2,16 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Press Start 2P', cursive;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  color: #fff;
+/* === Custom Fonts === */
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+body {
+  @apply bg-gradient-to-br from-[#1a0022] via-[#220044] to-[#0f001a] text-white font-sans antialiased overflow-x-hidden;
+  font-family: 'PressStart2P', monospace;
+}
+
+/* === Neon Glow Colors === */
+.text-neon-pink {
+  @apply text-pink-500;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.text-neon-cyan {
+  @apply text-cyan-400;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.text-neon-purple {
+  @apply text-purple-400;
+  text-shadow: 0 0 5px #b44cff, 0 0 10px #b44cff, 0 0 20px #b44cff;
+}
+
+/* === Drop Shadow Glow === */
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+}
+
+/* === Glassmorphism Card === */
+.card-glass {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-xl;
+}
+
+/* === Animation Keyframes === */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
