@@ -1,38 +1,44 @@
 ---
-import { motion } from "framer-motion";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { motion } from 'framer-motion';
 ---
 
-<motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }}
-  class="text-center p-6"
->
-  <h1 class="text-4xl md:text-6xl text-neon-pink drop-shadow-glow font-vapor mb-4">
-    Welcome to the Vapor Dream
-  </h1>
-  <p class="text-lg text-neon-cyan mb-6">
-    Experience a retro-futuristic journey through pixels, glitch, and gradients.
-  </p>
-  <a href="#blog" class="inline-block px-6 py-2 border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300 rounded-full">
-    Enter the Portal
-  </a>
-</motion.div>
+<BaseLayout>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    class="text-center p-8"
+  >
+    <h1 class="text-4xl md:text-6xl text-neon-pink font-vapor drop-shadow-glow mb-4">
+      Welcome to the Vapor Dream
+    </h1>
+    <p class="text-lg md:text-xl text-neon-cyan max-w-xl mx-auto mb-6">
+      Experience a retro-futuristic journey through pixels, glitch, and gradients.
+    </p>
+    <a
+      href="#blog"
+      class="inline-block px-6 py-2 border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300 rounded-full"
+    >
+      Enter the Portal
+    </a>
+  </motion.div>
 
-<section id="blog" class="mt-16 p-8">
-  <h2 class="text-2xl text-neon-purple mb-4 font-vapor">Featured Blog Posts</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="bg-white/5 p-4 rounded-xl border border-neon-cyan backdrop-blur">
-      <h3 class="text-neon-cyan">☄️ Shimmering Pixels</h3>
-      <p>How digital nostalgia shapes modern web design.</p>
+  <section id="blog" class="mt-20 p-6 md:p-12">
+    <h2 class="text-3xl text-neon-purple font-vapor mb-8 text-center">Featured Blog Posts</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white/5 p-5 rounded-xl border border-neon-cyan backdrop-blur-sm hover:scale-105 transition">
+        <h3 class="text-neon-cyan text-xl font-bold mb-2">☄️ Shimmering Pixels</h3>
+        <p class="text-white text-sm opacity-80">How digital nostalgia shapes modern web design.</p>
+      </div>
+      <div class="bg-white/5 p-5 rounded-xl border border-neon-pink backdrop-blur-sm hover:scale-105 transition">
+        <h3 class="text-neon-pink text-xl font-bold mb-2">🌀 Lucid UI</h3>
+        <p class="text-white text-sm opacity-80">What it means to dream in CSS and glitch.</p>
+      </div>
+      <div class="bg-white/5 p-5 rounded-xl border border-neon-purple backdrop-blur-sm hover:scale-105 transition">
+        <h3 class="text-neon-purple text-xl font-bold mb-2">🎛️ Synth Aesthetics</h3>
+        <p class="text-white text-sm opacity-80">The philosophy behind vaporwave interfaces.</p>
+      </div>
     </div>
-    <div class="bg-white/5 p-4 rounded-xl border border-neon-pink backdrop-blur">
-      <h3 class="text-neon-pink">🌀 Lucid UI</h3>
-      <p>What it means to dream in CSS and glitch.</p>
-    </div>
-    <div class="bg-white/5 p-4 rounded-xl border border-neon-purple backdrop-blur">
-      <h3 class="text-neon-purple">🎛️ Synth Aesthetics</h3>
-      <p>The philosophy behind vaporwave interfaces.</p>
-    </div>
-  </div>
-</section>
+  </section>
+</BaseLayout>
