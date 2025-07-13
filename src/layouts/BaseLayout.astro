@@ -6,15 +6,16 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Vaporwave fever dream site built with Astro" />
+    <meta name="description" content="A vaporwave psychedelic UI with Astro" />
     <title>Hippie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@600&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen flex flex-col">
-    <main class="flex-1">
+  <body class="bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white font-vapor">
+    <main class="min-h-screen w-full flex flex-col justify-center items-center text-center p-4">
       <slot />
     </main>
-    <footer class="text-center py-4 text-neon-pink text-xs opacity-80">
-      ✦ Made with 🌈 & pixels ✦
+    <footer class="text-sm text-white/70 mt-10 py-4 font-synth">
+      ✦ Brought to you by dreams, pixels, and caffeine ✦
     </footer>
   </body>
 </html>
