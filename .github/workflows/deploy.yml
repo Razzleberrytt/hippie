@@ -3,10 +3,10 @@ name: Deploy Astro Site
 on:
   push:
     branches:
-      - main  # change this to your default branch if needed
+      - main
 
 permissions:
-  contents: write  # Needed to push to gh-pages
+  contents: write
 
 jobs:
   build:
@@ -15,15 +15,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies (force conflict resolution)
+      - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build Astro site
+      - name: Build site
         run: npm run build
 
       - name: Deploy to GitHub Pages
