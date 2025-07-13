@@ -1,22 +1,16 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
-import githubPages from 'astro-github-pages';
+import react from '@astrojs/react';
+import github from '@astrojs/github';
 
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://razzleberrytt.github.io',
+  site: 'https://razzleberrytt.github.io/',
+  base: '/',
   integrations: [
     react(),
     tailwind(),
-    sitemap(),
-    githubPages()
+    github()
   ],
-  vite: {
-    ssr: {
-      noExternal: ['framer-motion']
-    }
-  }
 });
