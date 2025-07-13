@@ -1,15 +1,11 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
 import github from '@astrojs/github';
+import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
+  site: 'https://razzleberrytt.github.io/hippie/', // Ensure this is your GitHub Pages site path
+  base: '/hippie/', // Required for subpath deployment
   output: 'static',
-  site: 'https://razzleberrytt.github.io',
-  integrations: [react(), tailwind(), github()],
-  vite: {
-    build: {
-      target: 'esnext'
-    }
-  }
+  adapter: github(),
+  integrations: [tailwind()],
 });
