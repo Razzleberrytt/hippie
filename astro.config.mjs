@@ -1,9 +1,7 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
+import github from '@astrojs/github';
 
 export default defineConfig({
   output: 'static',
-  integrations: [sitemap()],
-  site: 'https://razzleberrytt.github.io/hippie/',
-  base: '/hippie/'
+  adapter: github(),
 });
