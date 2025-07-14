@@ -1,0 +1,20 @@
+---
+const { herb, index } = Astro.props;
+---
+
+<details class="group border border-cyan-400 rounded-md p-4 bg-black/50 backdrop-blur-md transition-all">
+  <summary class="cursor-pointer text-xl font-semibold neon-glow">
+    {herb.name}
+  </summary>
+
+  <div class="mt-3 text-sm leading-relaxed text-white space-y-2">
+    {Object.entries(herb).map(([key, value]) =>
+      key !== 'name' && value ? (
+        <div>
+          <strong class="text-cyan-300 capitalize">{key.replace(/_/g, ' ')}:</strong>
+          <p>{value}</p>
+        </div>
+      ) : null
+    )}
+  </div>
+</details>
