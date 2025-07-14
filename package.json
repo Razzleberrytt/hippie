@@ -8,10 +8,6 @@
   },
   "dependencies": {
     "astro": "^4.6.8",
-    "@astrojs/adapter-static": "latest",
-    "tailwindcss": "latest", 
-    "postcss": "latest",
-    "autoprefixer": "latest"
-  },
-  "devDependencies": {}
+    "@astrojs/sitemap": "^4.0.0"
+  }
 }
