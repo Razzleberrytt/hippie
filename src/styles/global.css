@@ -10,3 +10,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.neon-glow {
+  text-shadow: 0 0 5px #f0f, 0 0 10px #0ff, 0 0 15px #f0f;
+}
