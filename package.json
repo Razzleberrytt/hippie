@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "astro": "^4.6.18",
-    "@astrojs/github-pages": "^4.0.0",
-    "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/github-pages": "^4.6.0",
+    "@astrojs/tailwind": "^4.6.0",
     "framer-motion": "^10.16.1"
   },
   "devDependencies": {
