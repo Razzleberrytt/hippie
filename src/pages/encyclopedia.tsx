@@ -1,52 +1,25 @@
-import { useState } from 'react';
-import herbs from '../../data/herbs.json'; // Adjust path if needed
+import herbs from '../data/herbs.json'; // or wherever your JSON is
 
-type Herb = {
-  Name: string;
-  ScientificName?: string;
-  Region?: string;
-  Effects?: string;
-  Preparation?: string;
-  [key: string]: any; // Allow flexible fields
-};
-
-export default function EncyclopediaPage() {
-  const [search, setSearch] = useState('');
-
-  const filtered = herbs.filter((herb: Herb) =>
-    herb.Name.toLowerCase().includes(search.toLowerCase())
-  );
-
+export default function Encyclopedia() {
   return (
-    <div className="p-6 max-w-4xl mx-auto text-white">
-      <h1 className="text-4xl font-retro mb-6">🌿 Herb Encyclopedia</h1>
-
-      <input
-        type="text"
-        placeholder="Search herbs..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="w-full p-2 mb-6 bg-black border border-gray-700 text-white"
-      />
-
+    <main className="p-8 text-white">
+      <h1 className="text-4xl font-retro mb-6">🌿 Psychoactive Herb Index</h1>
       <div className="space-y-4">
-        {filtered.map((herb: Herb, idx: number) => (
-          <details key={idx} className="border border-gray-700 rounded-lg">
-            <summary className="cursor-pointer px-4 py-2 bg-gray-800">
-              {herb.Name}
-            </summary>
-            <div className="p-4 bg-gray-900 text-sm">
+        {herbs.map((herb, index) => (
+          <details key={index} className="bg-purple-900/40 p-4 rounded">
+            <summary className="cursor-pointer text-xl font-semibold">{herb.name}</summary>
+            <div className="mt-2 text-sm space-y-1">
               {Object.entries(herb).map(([key, value]) => (
-                key !== 'Name' && value ? (
-                  <div key={key} className="mb-2">
-                    <strong>{key}:</strong> {value}
-                  </div>
-                ) : null
+                key !== 'name' && (
+                  <p key={key}>
+                    <strong className="capitalize">{key}:</strong> {value?.toString()}
+                  </p>
+                )
               ))}
             </div>
           </details>
         ))}
       </div>
-    </div>
+    </main>
   );
 }
