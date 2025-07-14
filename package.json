@@ -9,5 +9,9 @@
   "dependencies": {
     "astro": "^4.6.8"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.19"
+  }
 }
