@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "astro": "^4.6.8",
-    "@astrojs/adapter-static": "^3.0.0"
+    "@astrojs/adapter-static": "^3.0.8"
   },
   "devDependencies": {}
 }
