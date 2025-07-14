@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
-import staticAdapter from '@astrojs/adapter-static';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   output: 'static',
-  adapter: staticAdapter(),
+  integrations: [sitemap()],
+  site: 'https://razzleberrytt.github.io/hippie/',
+  base: '/hippie/'
 });
